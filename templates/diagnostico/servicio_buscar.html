@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<img src="/static/pics/guatemala.png"/>
+</br></br>
+<table  class="table table-bordered" border= "2" cellpadding="5" cellspacing="2" width="100%">
+	<thead>
+		<tr>
+
+			<th>status</th>
+			<th>id_servicio_gt</th>
+			<th>cliente_gt</th>
+			<th>sitio_gt</th>
+			<th>servicio_gt</th>
+            <th>bw_gt</th>
+            <th>nodo_gt</th>
+			<th>equipo_gt</th>
+			<th>nodo_gt</th>
+			<th>troncal_gt</th>
+			<th>ip_gestion_gt</th>
+			<th>vlan_um_gt</th>
+			<th>vlan_troncal_gt</th>
+			<th>vlan_mng_gt</th>
+			<th>ip_publica_gt</th>
+			<th>puerto_nodo_gt</th>
+			<th>puerto_troncal_gt</th>
+			<th>vlan_gt</th>
+			<th>ip_publica</th>
+			<th>comentario_gt</th>
+<!--			<th>fecha_solicitud</th>
+			<th>fecha_info_dr</th>
+			<th>fecha_config</th>
+			<th>fecha_alta</th>
+			<th>herramienta_ticket_gt</th>
+			<th>transceiver_gt</th>
+			<th>sw_orion_gt</th>
+-->
+		</tr>
+	</thead>
+
+	<tbody>
+
+		{% if serviciogts %}
+		{% for Serviciogt in serviciogts %}
+		<tr>
+			<td>{{ Serviciogt.status }}</td>
+			<td>{{ Serviciogt.id_servicio_gt }}</td>
+			<td>{{ Serviciogt.cliente_gt }}</td>
+			<td>{{ Serviciogt.sitio_gt }}</td>
+			<td>{{ Serviciogt.servicio_gt }}</td>
+			<td>{{ Serviciogt.bw_gt }}</td>
+			<td>{{ Serviciogt.nodo_gt }}</td>
+			<td>{{ Serviciogt.equipo_gt }}</td>
+			<td>{{ Serviciogt.nodo_gt }}</td>
+			<td>{{ Serviciogt.troncal_gt }}</td>
+			<td>{{ Serviciogt.ip_gestion_gt }}</td>
+			<td>{{ Serviciogt.vlan_um_gt }}</td>
+			<td>{{ Serviciogt.vlan_troncal_gt }}</td>
+			<td>{{ Serviciogt.vlan_mng_gt }}</td>
+			<td>{{ Serviciogt.ip_publica_gt }}</td>
+			<td>{{ Serviciogt.puerto_nodo_gt }}</td>
+			<td>{{ Serviciogt.puerto_troncal_gt }}</td>
+			<td>{{ Serviciogt.vlan_gt }}</td>
+			<td>{{ Serviciogt.ip_publica }}</td>
+			<td>{{ Serviciogt.comentario_gt }}</td>
+<!--		<td>{{ Serviciogt.fecha_solicitud }}</td>
+			<td>{{ Serviciogt.fecha_info_dr }}</td>
+			<td>{{ Serviciogt.fecha_config }}</td>
+			<td>{{ Serviciogt.fecha_alta }}</td>
+			<td>{{ Serviciogt.herramienta_ticket_gt }}</td>
+			<td>{{ Serviciogt.transceiver_gt }}</td>
+			<td>{{ Serviciogt.sw_orion_gt }}</td>
+			-->
+		{% endfor %}
+		{% else %}
+		<h1>No hay registros de serviciosGT</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}

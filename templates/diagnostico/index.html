@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+
+ {% block header %}
+    <h4>Herramienta automatizacion Ufinet</h4>
+    {% endblock %}
+
+    {% block content %}
+<img src="/static/pics/paises.png"/>
+    <h3>Ingrese el ID de servicio a Buscar</h3>
+<div>
+<form class="btn-search" method="POST" action="buscar">{%csrf_token %}
+<input type="text" name="buscalo" class="search-query"
+       placeholder="Buscar Servicio por ID">
+
+           <input class= "miboton" type="submit" value="Buscar por ID">
+
+           </input>
+
+</form>
+</div>
+    <h3>Ingrese la vlan de servicio a Buscar y el Pais Especifico</h3>
+<form class="btn-search-vlan" method="POST" action="buscar_vlan">{%csrf_token %}
+<input type="text" name="busca_vlan" class="search-query"
+       placeholder="Buscar Servicio por Vlan">
+
+   <form class="btn-search-vlan" method="POST" action="servicio_buscar_vlan">{%csrf_token %}
+        <select  name="Busca_servicio_vlan">
+                <option selected="selected">Guatemala</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Panama">Panama</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+        </select>
+ <input type="submit" value="Buscar servicio por vlan">
+    </form>
+
+    <h3>Ingrese el nombre de servicio a Buscar y el Pais Especifico</h3>
+<form class="btn-search-sitio" method="POST" action="buscar_sitio">{%csrf_token %}
+<input type="text" name="busca_sitio" class="search-query"
+       placeholder="Buscar Servicio por Sitio">
+
+   <form class="btn-search-sitio" method="POST" action="servicio_buscar_sitio">{%csrf_token %}
+        <select  name="Busca_servicio_sitio" aria-required="true" data-ok="false" >
+                <option selected="selected">Guatemala</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Panama">Panama</option>
+                <option value="Colombia">Colombia</option>
+                <option value="ColombiaIFX">ColombiaIFX</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Peru">Peru</option>
+
+        </select>
+ <input type="submit" value="Buscar servicio por sitio" />
+    </form>
+
+
+</form>
+
+
+    {% endblock %}
+
+    {% block footer %}
+
+     {% endblock %}
+
